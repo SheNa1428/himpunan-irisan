@@ -7,8 +7,6 @@
 
 <title>IRISAN HIMPUNAN</title>
 
-<!-- FONT -->
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -35,7 +33,7 @@ body{
     overflow-x:hidden;
 }
 
-/* BACKGROUND GLOW */
+/* GLOW */
 
 body::before{
     content:'';
@@ -85,17 +83,20 @@ body::after{
 
 nav{
     width:100%;
+
     padding:20px 80px;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     position:fixed;
 
     top:0;
 
-    background:rgba(16,36,28,0.4);
+    background:rgba(16,36,28,0.45);
 
     backdrop-filter:blur(10px);
 
@@ -103,20 +104,26 @@ nav{
 }
 
 .logo{
-    font-size:30px;
+    font-size:32px;
+
     font-weight:bold;
+
     font-family:'Cinzel',serif;
 }
 
 nav ul{
     display:flex;
+
     gap:30px;
+
     list-style:none;
 }
 
 nav ul li a{
     text-decoration:none;
+
     color:#F5E6CC;
+
     transition:0.3s;
 }
 
@@ -130,7 +137,9 @@ nav ul li a:hover{
     min-height:100vh;
 
     display:flex;
+
     justify-content:center;
+
     align-items:center;
 
     padding:120px 10%;
@@ -142,10 +151,10 @@ nav ul li a:hover{
 
 .hero h1{
     font-size:100px;
-    font-family:'Cinzel',serif;
-    line-height:1.1;
 
-    color:#F5E6CC;
+    font-family:'Cinzel',serif;
+
+    line-height:1.1;
 }
 
 .hero span{
@@ -154,8 +163,11 @@ nav ul li a:hover{
 
 .hero p{
     margin-top:25px;
-    font-size:20px;
+
     line-height:1.8;
+
+    font-size:20px;
+
     color:#e7d8be;
 }
 
@@ -200,8 +212,6 @@ section{
     margin-bottom:60px;
 
     font-family:'Cinzel',serif;
-
-    color:#F5E6CC;
 }
 
 /* CARD */
@@ -209,7 +219,7 @@ section{
 .card{
 
     background:
-    rgba(245,230,204,0.92);
+    rgba(245,230,204,0.93);
 
     color:#173728;
 
@@ -227,11 +237,13 @@ section{
 
 .card h2{
     margin-bottom:20px;
+
     font-size:35px;
 }
 
 .card p{
     line-height:1.9;
+
     font-size:18px;
 }
 
@@ -240,13 +252,11 @@ section{
 .rumus{
     text-align:center;
 
-    font-size:60px;
-
-    margin:40px 0;
-
-    color:#173728;
+    font-size:55px;
 
     font-weight:bold;
+
+    margin:40px 0;
 }
 
 /* CONTOH */
@@ -260,9 +270,80 @@ section{
 
     border-radius:15px;
 
-    margin-top:25px;
-
     line-height:2;
+
+    margin-top:25px;
+}
+
+/* DIAGRAM VENN */
+
+.venn-container{
+
+    position:relative;
+
+    width:320px;
+
+    height:220px;
+
+    margin:50px auto;
+}
+
+.circle{
+
+    width:160px;
+
+    height:160px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:35px;
+
+    font-weight:bold;
+
+    color:#173728;
+}
+
+.a{
+
+    background:
+    rgba(46,90,69,0.45);
+
+    left:40px;
+
+    top:20px;
+}
+
+.b{
+
+    background:
+    rgba(216,195,160,0.75);
+
+    left:120px;
+
+    top:20px;
+}
+
+.irisan{
+
+    position:absolute;
+
+    left:128px;
+
+    top:88px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#173728;
 }
 
 /* KALKULATOR */
@@ -306,19 +387,21 @@ section{
     color:#2E5A45;
 }
 
-/* INPUT */
+/* LABEL */
 
 label{
     display:block;
 
-    margin-bottom:10px;
-
     margin-top:25px;
+
+    margin-bottom:10px;
 
     font-size:24px;
 
     font-weight:bold;
 }
+
+/* INPUT */
 
 input{
     width:100%;
@@ -388,7 +471,90 @@ button:hover{
 
 #hasil{
     font-size:45px;
+
     font-weight:bold;
+}
+
+/* PENJELASAN */
+
+#penjelasan{
+
+    margin-top:25px;
+
+    font-size:20px;
+
+    line-height:1.8;
+}
+
+/* DIAGRAM HASIL */
+
+.venn-hasil{
+
+    position:relative;
+
+    width:260px;
+
+    height:180px;
+
+    margin:40px auto 10px;
+}
+
+.circle-hasil{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    color:#173728;
+}
+
+.a-hasil{
+
+    background:
+    rgba(46,90,69,0.45);
+
+    left:20px;
+
+    top:20px;
+}
+
+.b-hasil{
+
+    background:
+    rgba(216,195,160,0.75);
+
+    left:90px;
+
+    top:20px;
+}
+
+.irisan-hasil{
+
+    position:absolute;
+
+    left:95px;
+
+    top:70px;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#173728;
 }
 
 /* ORNAMEN */
@@ -461,13 +627,27 @@ IRISAN
 </div>
 
 <ul>
-<li><a href="#materi">Materi</a></li>
 
-<li><a href="#rumus">Rumus</a></li>
+<li>
+<a href="#materi">Materi</a>
+</li>
 
-<li><a href="#contoh">Contoh</a></li>
+<li>
+<a href="#rumus">Rumus</a>
+</li>
 
-<li><a href="#kalkulator">Kalkulator</a></li>
+<li>
+<a href="#venn">Diagram Venn</a>
+</li>
+
+<li>
+<a href="#contoh">Contoh</a>
+</li>
+
+<li>
+<a href="#kalkulator">Kalkulator</a>
+</li>
+
 </ul>
 
 </nav>
@@ -484,13 +664,15 @@ IRISAN
 </h1>
 
 <p>
-Irisan himpunan adalah himpunan yang berisi anggota-anggota yang sama dari dua himpunan atau lebih.
+Irisan himpunan adalah himpunan yang berisi anggota yang sama dari dua himpunan atau lebih.
 </p>
 
 <a href="#materi">
+
 <button>
 Pelajari Sekarang
 </button>
+
 </a>
 
 </div>
@@ -512,7 +694,7 @@ Pengertian Irisan
 </h2>
 
 <p>
-Irisan himpunan adalah himpunan yang anggotanya berasal dari anggota yang sama pada dua himpunan atau lebih. Irisan dilambangkan dengan simbol ∩.
+Irisan himpunan adalah himpunan yang berisi anggota yang sama dari dua himpunan atau lebih. Irisan dilambangkan dengan simbol ∩.
 </p>
 
 </div>
@@ -534,7 +716,49 @@ A ∩ B = {x | x ∈ A dan x ∈ B}
 </div>
 
 <p>
-Rumus di atas berarti himpunan irisan terdiri dari anggota yang berada di himpunan A dan juga berada di himpunan B.
+Rumus tersebut berarti himpunan irisan terdiri dari anggota yang berada di himpunan A dan juga berada di himpunan B.
+</p>
+
+</div>
+
+</section>
+
+<!-- DIAGRAM VENN -->
+
+<section id="venn">
+
+<h1 class="section-title">
+Diagram Venn
+</h1>
+
+<div class="card">
+
+<h2>
+Implementasi Diagram Venn
+</h2>
+
+<p>
+Diagram Venn digunakan untuk menggambarkan hubungan antar himpunan. Daerah yang bertumpukan menunjukkan irisan dari dua himpunan.
+</p>
+
+<div class="venn-container">
+
+<div class="circle a">
+A
+</div>
+
+<div class="circle b">
+B
+</div>
+
+<div class="irisan">
+A ∩ B
+</div>
+
+</div>
+
+<p style="margin-top:40px;">
+Bagian tengah yang bertumpukan merupakan anggota yang terdapat pada himpunan A dan himpunan B.
 </p>
 
 </div>
@@ -623,6 +847,26 @@ Hasil Irisan
 A ∩ B = { }
 </div>
 
+<div id="penjelasan">
+Penjelasan akan muncul di sini
+</div>
+
+<div class="venn-hasil">
+
+<div class="circle-hasil a-hasil">
+A
+</div>
+
+<div class="circle-hasil b-hasil">
+B
+</div>
+
+<div class="irisan-hasil">
+A ∩ B
+</div>
+
+</div>
+
 </div>
 
 </div>
@@ -664,6 +908,13 @@ b.includes(item));
 document.getElementById("hasil")
 .innerHTML =
 "A ∩ B = { "
++ irisan.join(", ")
++ " }";
+
+document.getElementById("penjelasan")
+.innerHTML =
+
+"Anggota yang sama dari himpunan A dan B adalah: { "
 + irisan.join(", ")
 + " }";
 
