@@ -19,32 +19,28 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
 /* BODY */
 
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    font-family:'Poppins',sans-serif;
 
     background:
     radial-gradient(circle at top left,#2E5A45,#10241c 60%);
 
-    overflow:hidden;
+    color:#F5E6CC;
 
-    font-family:'Poppins',sans-serif;
-
-    position:relative;
+    overflow-x:hidden;
 }
 
-/* GLOW BACKGROUND */
+/* BACKGROUND GLOW */
 
 body::before{
     content:'';
 
-    position:absolute;
+    position:fixed;
 
     width:500px;
     height:500px;
@@ -59,12 +55,14 @@ body::before{
     left:-120px;
 
     opacity:0.4;
+
+    z-index:-1;
 }
 
 body::after{
     content:'';
 
-    position:absolute;
+    position:fixed;
 
     width:400px;
     height:400px;
@@ -79,105 +77,206 @@ body::after{
     right:-100px;
 
     opacity:0.2;
+
+    z-index:-1;
 }
 
-/* ORNAMEN MATEMATIKA */
+/* NAVBAR */
 
-.math{
-    position:absolute;
+nav{
+    width:100%;
+    padding:20px 80px;
 
-    color:#f5e6cc;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    opacity:0.10;
+    position:fixed;
 
+    top:0;
+
+    background:rgba(16,36,28,0.4);
+
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+}
+
+.logo{
+    font-size:30px;
     font-weight:bold;
-
-    user-select:none;
-
-    animation:float 5s ease-in-out infinite;
+    font-family:'Cinzel',serif;
 }
 
-/* POSISI ORNAMEN */
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
 
-.math1{
-    top:60px;
-    left:70px;
+nav ul li a{
+    text-decoration:none;
+    color:#F5E6CC;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#d8c3a0;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:120px 10%;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:100px;
+    font-family:'Cinzel',serif;
+    line-height:1.1;
+
+    color:#F5E6CC;
+}
+
+.hero span{
+    color:#d8c3a0;
+}
+
+.hero p{
+    margin-top:25px;
+    font-size:20px;
+    line-height:1.8;
+    color:#e7d8be;
+}
+
+.hero button{
+    margin-top:35px;
+
+    padding:18px 35px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:
+    linear-gradient(90deg,#173728,#2E5A45);
+
+    color:white;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.05);
+}
+
+/* SECTION */
+
+section{
+    padding:120px 10%;
+}
+
+/* TITLE */
+
+.section-title{
+    text-align:center;
+
     font-size:60px;
-}
 
-.math2{
-    top:150px;
-    right:100px;
-    font-size:70px;
-}
+    margin-bottom:60px;
 
-.math3{
-    bottom:120px;
-    left:60px;
-    font-size:55px;
-}
+    font-family:'Cinzel',serif;
 
-.math4{
-    bottom:80px;
-    right:70px;
-    font-size:70px;
-}
-
-.math5{
-    top:330px;
-    left:90px;
-    font-size:45px;
-}
-
-.math6{
-    top:100px;
-    right:320px;
-    font-size:45px;
-}
-
-.math7{
-    bottom:250px;
-    right:250px;
-    font-size:45px;
-}
-
-.math8{
-    top:250px;
-    left:250px;
-    font-size:40px;
-}
-
-/* ANIMASI */
-
-@keyframes float{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-10px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
+    color:#F5E6CC;
 }
 
 /* CARD */
 
+.card{
+
+    background:
+    rgba(245,230,204,0.92);
+
+    color:#173728;
+
+    border-radius:30px;
+
+    padding:40px;
+
+    margin-bottom:40px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.3);
+
+    backdrop-filter:blur(10px);
+}
+
+.card h2{
+    margin-bottom:20px;
+    font-size:35px;
+}
+
+.card p{
+    line-height:1.9;
+    font-size:18px;
+}
+
+/* RUMUS */
+
+.rumus{
+    text-align:center;
+
+    font-size:60px;
+
+    margin:40px 0;
+
+    color:#173728;
+
+    font-weight:bold;
+}
+
+/* CONTOH */
+
+.contoh{
+    background:#efe4cc;
+
+    padding:25px;
+
+    border-left:8px solid #2E5A45;
+
+    border-radius:15px;
+
+    margin-top:25px;
+
+    line-height:2;
+}
+
+/* KALKULATOR */
+
 .container{
 
-    width:520px; 
-    
-    max-height:90vh;
-    
-    overflow-y:auto;
+    max-width:650px;
+
+    margin:auto;
 
     background:
     rgba(245,230,204,0.95);
 
-    backdrop-filter:blur(15px);
+    color:#173728;
 
     border-radius:35px;
 
@@ -185,85 +284,43 @@ body::after{
 
     box-shadow:
     0 15px 40px rgba(0,0,0,0.4);
-
-    position:relative;
-
-    z-index:2;
-
-    border:1px solid rgba(255,255,255,0.3);
 }
 
-/* JUDUL */
-
-h1{
-
+.container h1{
     text-align:center;
 
-    font-size:80px;
-
-    color:#173728;
-
-    letter-spacing:5px;
+    font-size:70px;
 
     font-family:'Cinzel',serif;
 
-    text-shadow:
-    3px 3px 8px rgba(0,0,0,0.15);
-
     margin-bottom:10px;
 }
 
-/* SUB JUDUL */
-
 .sub{
-
     text-align:center;
 
-    color:#2E5A45;
-
-    font-size:38px;
-
-    margin-bottom:25px;
-}
-
-/* DESKRIPSI */
-
-.deskripsi{
-
-    background:#e7d8be;
-
-    padding:14px;
-
-    border-radius:14px;
-
-    text-align:center;
-
-    color:#173728;
+    font-size:35px;
 
     margin-bottom:30px;
 
-    font-weight:500;
-}
-
-/* LABEL */
-
-label{
-
-    display:block;
-
-    margin-bottom:10px;
-
-    color:#173728;
-
-    font-size:22px;
-
-    font-weight:600;
+    color:#2E5A45;
 }
 
 /* INPUT */
 
-input{
+label{
+    display:block;
 
+    margin-bottom:10px;
+
+    margin-top:25px;
+
+    font-size:24px;
+
+    font-weight:bold;
+}
+
+input{
     width:100%;
 
     padding:18px;
@@ -272,33 +329,21 @@ input{
 
     border-radius:16px;
 
-    margin-bottom:22px;
-
     background:#fffdf9;
 
     font-size:17px;
 
     outline:none;
-
-    transition:0.3s;
-
-    border:2px solid transparent;
-}
-
-input:focus{
-
-    border:2px solid #2E5A45;
-
-    transform:scale(1.02);
 }
 
 /* BUTTON */
 
 button{
-
     width:100%;
 
     padding:18px;
+
+    margin-top:30px;
 
     border:none;
 
@@ -307,82 +352,89 @@ button{
     background:
     linear-gradient(90deg,#173728,#2E5A45);
 
-    color:#fff;
+    color:white;
 
     font-size:24px;
-
-    font-weight:600;
 
     cursor:pointer;
 
     transition:0.3s;
-
-    box-shadow:
-    0 8px 20px rgba(0,0,0,0.25);
 }
 
-/* HOVER BUTTON */
-
 button:hover{
-
-    transform:
-    translateY(-3px) scale(1.02);
+    transform:scale(1.03);
 }
 
 /* HASIL */
 
 .hasil{
 
-    margin-top:28px;
+    margin-top:35px;
 
     padding:30px;
 
-    border-radius:22px;
+    border-radius:20px;
 
     background:#efe4cc;
 
-    text-align:center;
-
     border:2px dashed #b7a98d;
+
+    text-align:center;
 }
 
-/* JUDUL HASIL */
-
-.hasil-title{
-
-    font-size:24px;
-
-    color:#173728;
-
-    margin-bottom:15px;
-
-    font-weight:600;
+.hasil h2{
+    margin-bottom:20px;
 }
-
-/* ISI HASIL */
 
 #hasil{
-
-    font-size:42px;
-
-    color:#173728;
-
+    font-size:45px;
     font-weight:bold;
 }
 
-/* QUOTE */
+/* ORNAMEN */
 
-.quote{
+.math{
+    position:fixed;
 
-    margin-top:28px;
+    color:#F5E6CC;
 
+    opacity:0.08;
+
+    font-size:70px;
+
+    font-weight:bold;
+
+    z-index:-1;
+}
+
+.math1{
+    top:150px;
+    left:50px;
+}
+
+.math2{
+    top:300px;
+    right:100px;
+}
+
+.math3{
+    bottom:150px;
+    left:100px;
+}
+
+.math4{
+    bottom:100px;
+    right:70px;
+}
+
+/* FOOTER */
+
+footer{
     text-align:center;
 
-    color:#2E5A45;
+    padding:40px;
 
-    font-style:italic;
-
-    font-size:18px;
+    color:#d8c3a0;
 }
 
 </style>
@@ -396,40 +448,161 @@ button:hover{
 
 <div class="math math2">πr²</div>
 
-<div class="math math3">a²+b²=c²</div>
+<div class="math math3">V=s³</div>
 
 <div class="math math4">∑</div>
 
-<div class="math math5">V = s³</div>
+<!-- NAVBAR -->
 
-<div class="math math6">△</div>
+<nav>
 
-<div class="math math7">∫</div>
+<div class="logo">
+IRISAN
+</div>
 
-<div class="math math8">√</div>
+<ul>
+<li><a href="#materi">Materi</a></li>
 
-<!-- CARD -->
+<li><a href="#rumus">Rumus</a></li>
+
+<li><a href="#contoh">Contoh</a></li>
+
+<li><a href="#kalkulator">Kalkulator</a></li>
+</ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+IRISAN
+<span>HIMPUNAN</span>
+</h1>
+
+<p>
+Irisan himpunan adalah himpunan yang berisi anggota-anggota yang sama dari dua himpunan atau lebih.
+</p>
+
+<a href="#materi">
+<button>
+Pelajari Sekarang
+</button>
+</a>
+
+</div>
+
+</section>
+
+<!-- MATERI -->
+
+<section id="materi">
+
+<h1 class="section-title">
+Materi
+</h1>
+
+<div class="card">
+
+<h2>
+Pengertian Irisan
+</h2>
+
+<p>
+Irisan himpunan adalah himpunan yang anggotanya berasal dari anggota yang sama pada dua himpunan atau lebih. Irisan dilambangkan dengan simbol ∩.
+</p>
+
+</div>
+
+</section>
+
+<!-- RUMUS -->
+
+<section id="rumus">
+
+<h1 class="section-title">
+Rumus
+</h1>
+
+<div class="card">
+
+<div class="rumus">
+A ∩ B = {x | x ∈ A dan x ∈ B}
+</div>
+
+<p>
+Rumus di atas berarti himpunan irisan terdiri dari anggota yang berada di himpunan A dan juga berada di himpunan B.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTOH -->
+
+<section id="contoh">
+
+<h1 class="section-title">
+Contoh Soal
+</h1>
+
+<div class="card">
+
+<div class="contoh">
+
+Misal:
+
+<br><br>
+
+A = {1,2,3,4}
+
+<br>
+
+B = {3,4,5,6}
+
+<br><br>
+
+Maka:
+
+<br><br>
+
+A ∩ B = {3,4}
+
+</div>
+
+</div>
+
+</section>
+
+<!-- KALKULATOR -->
+
+<section id="kalkulator">
 
 <div class="container">
 
-<h1>IRISAN</h1>
+<h1>
+IRISAN
+</h1>
 
 <div class="sub">
 ❦ A ∩ B ❦
 </div>
 
-<div class="deskripsi">
-Tentukan irisan dari dua himpunan A dan B
-</div>
-
-<label>Himpunan A</label>
+<label>
+Himpunan A
+</label>
 
 <input
 type="text"
 id="a"
 placeholder="Contoh: 1,2,3,4">
 
-<label>Himpunan B</label>
+<label>
+Himpunan B
+</label>
 
 <input
 type="text"
@@ -440,13 +613,11 @@ placeholder="Contoh: 3,4,5,6">
 ⌕ Cari Irisan
 </button>
 
-<!-- HASIL -->
-
 <div class="hasil">
 
-<div class="hasil-title">
+<h2>
 Hasil Irisan
-</div>
+</h2>
 
 <div id="hasil">
 A ∩ B = { }
@@ -454,13 +625,17 @@ A ∩ B = { }
 
 </div>
 
-<!-- QUOTE -->
+</div>
 
-<div class="quote">
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
 ✦ Matematika adalah bahasa alam semesta ✦
-</div>
 
-</div>
+</footer>
 
 <!-- JAVASCRIPT -->
 
@@ -468,29 +643,30 @@ A ∩ B = { }
 
 function cariIrisan(){
 
-    let a =
-    document.getElementById("a")
-    .value.split(",");
+let a =
+document.getElementById("a")
+.value.split(",");
 
-    let b =
-    document.getElementById("b")
-    .value.split(",");
+let b =
+document.getElementById("b")
+.value.split(",");
 
-    a = a.map(item =>
-    item.trim());
+a = a.map(item =>
+item.trim());
 
-    b = b.map(item =>
-    item.trim());
+b = b.map(item =>
+item.trim());
 
-    let irisan =
-    a.filter(item =>
-    b.includes(item));
+let irisan =
+a.filter(item =>
+b.includes(item));
 
-    document.getElementById("hasil")
-    .innerHTML =
-    "A ∩ B = { "
-    + irisan.join(", ")
-    + " }";
+document.getElementById("hasil")
+.innerHTML =
+"A ∩ B = { "
++ irisan.join(", ")
++ " }";
+
 }
 
 </script>
