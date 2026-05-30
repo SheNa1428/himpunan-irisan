@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IRISAN HIMPUNAN</title>
+
+<!-- FONT -->
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* BODY */
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+    radial-gradient(circle at top left,#2E5A45,#10241c 60%);
+
+    overflow:hidden;
+
+    font-family:'Poppins',sans-serif;
+
+    position:relative;
+}
+
+/* GLOW BACKGROUND */
+
+body::before{
+    content:'';
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:#3d7058;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    top:-150px;
+    left:-120px;
+
+    opacity:0.4;
+}
+
+body::after{
+    content:'';
+
+    position:absolute;
+
+    width:400px;
+    height:400px;
+
+    background:#d8c3a0;
+
+    border-radius:50%;
+
+    filter:blur(120px);
+
+    bottom:-150px;
+    right:-100px;
+
+    opacity:0.2;
+}
+
+/* ORNAMEN MATEMATIKA */
+
+.math{
+    position:absolute;
+
+    color:#f5e6cc;
+
+    opacity:0.10;
+
+    font-weight:bold;
+
+    user-select:none;
+
+    animation:float 5s ease-in-out infinite;
+}
+
+/* POSISI ORNAMEN */
+
+.math1{
+    top:60px;
+    left:70px;
+    font-size:60px;
+}
+
+.math2{
+    top:150px;
+    right:100px;
+    font-size:70px;
+}
+
+.math3{
+    bottom:120px;
+    left:60px;
+    font-size:55px;
+}
+
+.math4{
+    bottom:80px;
+    right:70px;
+    font-size:70px;
+}
+
+.math5{
+    top:330px;
+    left:90px;
+    font-size:45px;
+}
+
+.math6{
+    top:100px;
+    right:320px;
+    font-size:45px;
+}
+
+.math7{
+    bottom:250px;
+    right:250px;
+    font-size:45px;
+}
+
+.math8{
+    top:250px;
+    left:250px;
+    font-size:40px;
+}
+
+/* ANIMASI */
+
+@keyframes float{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* CARD */
+
+.container{
+
+    width:520px;
+
+    background:
+    rgba(245,230,204,0.95);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:35px;
+
+    padding:45px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.4);
+
+    position:relative;
+
+    z-index:2;
+
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+/* JUDUL */
+
+h1{
+
+    text-align:center;
+
+    font-size:80px;
+
+    color:#173728;
+
+    letter-spacing:5px;
+
+    font-family:'Cinzel',serif;
+
+    text-shadow:
+    3px 3px 8px rgba(0,0,0,0.15);
+
+    margin-bottom:10px;
+}
+
+/* SUB JUDUL */
+
+.sub{
+
+    text-align:center;
+
+    color:#2E5A45;
+
+    font-size:38px;
+
+    margin-bottom:25px;
+}
+
+/* DESKRIPSI */
+
+.deskripsi{
+
+    background:#e7d8be;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    text-align:center;
+
+    color:#173728;
+
+    margin-bottom:30px;
+
+    font-weight:500;
+}
+
+/* LABEL */
+
+label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:#173728;
+
+    font-size:22px;
+
+    font-weight:600;
+}
+
+/* INPUT */
+
+input{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:16px;
+
+    margin-bottom:22px;
+
+    background:#fffdf9;
+
+    font-size:17px;
+
+    outline:none;
+
+    transition:0.3s;
+
+    border:2px solid transparent;
+}
+
+input:focus{
+
+    border:2px solid #2E5A45;
+
+    transform:scale(1.02);
+}
+
+/* BUTTON */
+
+button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:
+    linear-gradient(90deg,#173728,#2E5A45);
+
+    color:#fff;
+
+    font-size:24px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* HOVER BUTTON */
+
+button:hover{
+
+    transform:
+    translateY(-3px) scale(1.02);
+}
+
+/* HASIL */
+
+.hasil{
+
+    margin-top:28px;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:#efe4cc;
+
+    text-align:center;
+
+    border:2px dashed #b7a98d;
+}
+
+/* JUDUL HASIL */
+
+.hasil-title{
+
+    font-size:24px;
+
+    color:#173728;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+}
+
+/* ISI HASIL */
+
+#hasil{
+
+    font-size:42px;
+
+    color:#173728;
+
+    font-weight:bold;
+}
+
+/* QUOTE */
+
+.quote{
+
+    margin-top:28px;
+
+    text-align:center;
+
+    color:#2E5A45;
+
+    font-style:italic;
+
+    font-size:18px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ORNAMEN -->
+
+<div class="math math1">A ∩ B</div>
+
+<div class="math math2">πr²</div>
+
+<div class="math math3">a²+b²=c²</div>
+
+<div class="math math4">∑</div>
+
+<div class="math math5">V = s³</div>
+
+<div class="math math6">△</div>
+
+<div class="math math7">∫</div>
+
+<div class="math math8">√</div>
+
+<!-- CARD -->
+
+<div class="container">
+
+<h1>IRISAN</h1>
+
+<div class="sub">
+❦ A ∩ B ❦
+</div>
+
+<div class="deskripsi">
+Tentukan irisan dari dua himpunan A dan B
+</div>
+
+<label>Himpunan A</label>
+
+<input
+type="text"
+id="a"
+placeholder="Contoh: 1,2,3,4">
+
+<label>Himpunan B</label>
+
+<input
+type="text"
+id="b"
+placeholder="Contoh: 3,4,5,6">
+
+<button onclick="cariIrisan()">
+⌕ Cari Irisan
+</button>
+
+<!-- HASIL -->
+
+<div class="hasil">
+
+<div class="hasil-title">
+Hasil Irisan
+</div>
+
+<div id="hasil">
+A ∩ B = { }
+</div>
+
+</div>
+
+<!-- QUOTE -->
+
+<div class="quote">
+✦ Matematika adalah bahasa alam semesta ✦
+</div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+function cariIrisan(){
+
+    let a =
+    document.getElementById("a")
+    .value.split(",");
+
+    let b =
+    document.getElementById("b")
+    .value.split(",");
+
+    a = a.map(item =>
+    item.trim());
+
+    b = b.map(item =>
+    item.trim());
+
+    let irisan =
+    a.filter(item =>
+    b.includes(item));
+
+    document.getElementById("hasil")
+    .innerHTML =
+    "A ∩ B = { "
+    + irisan.join(", ")
+    + " }";
+}
+
+</script>
+
+</body>
+</html>
